@@ -1,5 +1,11 @@
-# Naming 
-Naming Case Conversion
+# Naming Case Conversion 
+
+### Features
+- 11 known case kinds (see list below) 
+- Custom case support `CustomNamingCase`
+- Conversion options `NamingOptions`
+- Extension support `NamingExtensions`
+- Designation using non-Latin characters, symbols, etc... also possible (if Ascii is false)
 
 ### Support Naming Cases
 
@@ -25,6 +31,10 @@ Train:		Tobias-Says-Hello-World
     - Example C# to JSON: "YourPropertyName" -> "your-property-name"
 - Autogenerate scripts
 - Dictionaries
+  - Resources
+  - Styles
+  - Languages
+  - ...
 - Tags
 - Databases
 - ...
@@ -56,3 +66,6 @@ foreach (var example in examples)
 // githubExamples
 // sterreichIstEinSchnesLand
 ```
+
+### License
+See MIT License
