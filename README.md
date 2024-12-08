@@ -1,4 +1,5 @@
 # Naming Case Conversion 
+Current Version 1.0
 
 ### Features
 - 11 known case kinds (see list below) 
