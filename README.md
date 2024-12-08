@@ -19,6 +19,15 @@ Title:		Tobias Says Hello World
 Train:		Tobias-Says-Hello-World
 ```
 
+### Usages
+
+- Properties
+    - Example C# to JSON: "YourPropertyName" -> "your-property-name"
+- Autogenerate scripts
+- Dictionaries
+- Tags
+- Databases
+- ...
 
 ### Examples
 ```
