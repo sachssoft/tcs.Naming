@@ -1,6 +1,25 @@
 # Naming 
 Naming Case Conversion
 
+### Support Naming Cases
+
+```
+Tobias says Hello World
+
+Camel:		tobiasSaysHelloWorld
+Constant:	TOBIAS_SAYS_HELLO_WORLD
+Dot:		tobias.says.hello.world
+Flat:		tobiassayshelloworld
+Kebab:		tobias-says-hello-world
+Pascal:		TobiasSaysHelloWorld
+Path:		Tobias/Says/Hello/World
+Sentence:	Tobias says hello world
+Snake:		tobias_says_hello_world
+Title:		Tobias Says Hello World
+Train:		Tobias-Says-Hello-World
+```
+
+
 ### Examples
 ```
 var example0 = "Hello World";
@@ -27,22 +46,4 @@ foreach (var example in examples)
 // helloWorld
 // githubExamples
 // sterreichIstEinSchnesLand
-```
-
-### Output Examples
-
-```
-Tobias says Hello World
-
-Camel:		tobiasSaysHelloWorld
-Constant:	TOBIAS_SAYS_HELLO_WORLD
-Dot:		tobias.says.hello.world
-Flat:		tobiassayshelloworld
-Kebab:		tobias-says-hello-world
-Pascal:		TobiasSaysHelloWorld
-Path:		Tobias/Says/Hello/World
-Sentence:	Tobias says hello world
-Snake:		tobias_says_hello_world
-Title:		Tobias Says Hello World
-Train:		Tobias-Says-Hello-World
 ```
