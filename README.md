@@ -1,10 +1,10 @@
-# Naming Case Conversion 
+# Naming Case Convention 
 Current Version 1.0
 
 ### Features
 - 11 known case kinds (see list below) 
 - Custom case support `CustomNamingCase`
-- Conversion options `NamingOptions`
+- Convention options `NamingOptions`
 - Extension support `NamingExtensions`
 - Designation using non-Latin characters, symbols, etc... also possible (if Ascii is false)
 
