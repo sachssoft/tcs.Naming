@@ -13,4 +13,8 @@ public class NamingOptions
     public bool KeepPunctuations { get; set; }
 
     public bool IgnoreIfInvalidCharacters { get; set; }
+
+    public bool SeparateIfUpperCase { get; set; } 
+
+    public bool KeepUpperCaseWord { get; set; }
 }
