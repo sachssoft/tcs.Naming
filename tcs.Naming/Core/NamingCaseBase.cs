@@ -46,14 +46,10 @@ public abstract class NamingCaseBase : INamingCase
                 // Prüfe, ob dieses Zeichen klein ist
                 if (char.IsLower(current))
                 {
-                    var should_separate = false;
-
                     if (char.IsUpper(next))
                     {
-                        should_separate = options.SeparateIfUpperCase;
+                        condition |= options.SeparateIfUpperCase;
                     }
-
-                    condition |= should_separate;
                 }
                 // Prüfe, ob dieses Zeichen groß ist
                 else if (char.IsUpper(current))
