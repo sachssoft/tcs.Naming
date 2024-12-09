@@ -43,6 +43,27 @@ public abstract class NamingCaseBase : INamingCase
                 var next = value[i + 1];
                 var condition = !KeepCharacter(next, SpecialCharacters, options, true);
 
+                // Prüfe, ob dieses Zeichen klein ist
+                if (char.IsLower(current))
+                {
+                    var should_separate = false;
+
+                    if (char.IsUpper(next))
+                    {
+                        should_separate = options.SeparateIfUpperCase;
+                    }
+
+                    condition |= should_separate;
+                }
+                // Prüfe, ob dieses Zeichen groß ist
+                else if (char.IsUpper(current))
+                {
+                    if (char.IsUpper(next))
+                    {
+                        condition |= !options.KeepUpperCaseWord;
+                    }
+                }
+
                 // Wenn es eine Zeichensetzung oder ein Leerzeichen ist
                 if (condition && current_word.Length > 0)
                 {
