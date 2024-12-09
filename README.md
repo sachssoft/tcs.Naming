@@ -45,17 +45,21 @@ Train:		Tobias-Says-Hello-World
 var example0 = "Hello World";
 var example1 = "GitHub Examples";
 var example2 = "Österreich ist ein schönes Land";
+var example3 = "WhatIsYourName?";
+var example4 = "EverythingOK?";
 
-var examples = new[] { example0, example1, example2 };
+var examples = new[] { example0, example1, example2, example3, example4 };
 
 foreach (var example in examples)
 {
-    var str = example.ConvertNamingCase<CamelCase>(new NamingOptions()
+    var str = example.ConvertNamingCase<SnakeCase>(new NamingOptions()
     {
         AsciiOnly = true,
         KeepPunctuations = false,
         KeepSymbols = false,
-        IgnoreIfInvalidCharacters = true
+        IgnoreIfInvalidCharacters = true,
+        SeparateIfUpperCase = true,
+        KeepUpperCaseWord = true
     });
 
     Console.WriteLine(str);
@@ -63,9 +67,11 @@ foreach (var example in examples)
 
 // Output:
 
-// helloWorld
-// githubExamples
-// sterreichIstEinSchnesLand
+// hello_world
+// git_hub_examples
+// sterreich_ist_ein_schnes_land
+// what_is_your_name
+// everything_ok
 ```
 
 ### License
