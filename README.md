@@ -26,7 +26,7 @@ Title:		Tobias Says Hello World
 Train:		Tobias-Says-Hello-World
 ```
 
-### Usages
+### Uses
 
 - Properties
     - Example C# to JSON: "YourPropertyName" -> "your-property-name"
