@@ -1,13 +1,52 @@
-﻿using System.Diagnostics;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace tcs.Naming.Test
 {
     public class Tests
     {
+        [Test]
+        public void Test()
+        {
+            var example0 = "Hello World";
+            var example1 = "GitHub Examples";
+            var example2 = "Österreich ist ein schönes Land";
+            var example3 = "WhatIsYourName?";
+            var example4 = "EverythingOK?";
+
+            var examples = new[] { example0, example1, example2, example3, example4 };
+
+            foreach (var example in examples)
+            {
+                var str = example.ConvertNamingCase<SnakeCase>(new NamingOptions()
+                {
+                    AsciiOnly = true,
+                    KeepPunctuations = false,
+                    KeepSymbols = false,
+                    IgnoreIfInvalidCharacters = true,
+                    SeparateIfUpperCase = true,
+                    KeepUpperCaseWord = true
+                });
+
+                Console.WriteLine(str);
+            }
+
+            // Output:
+
+            // hello_world
+            // git_hub_examples
+            // sterreich_ist_ein_schnes_land
+            // what_is_your_name
+            // everything_ok
+        }
+
         private readonly string[] names = [
+                "HelloWorldItIsOK",
                 "Hello World $3%.-FFF_ZZZ,:#äöü ♀!y█î©q ЖЉЙй \n\t Test Я тебя люблю",
                 "Januar Februar März April Mai Juni",
-                "Hello World 12345 /FA/ <S> !!!",
+                "MontagDIENSTAG_Mittwoch.Donnerstag/FREITAG",
                 "Hello-World-123-Pass",
                 "Hello0-World0-#*+",
                 "Hello#World#+_:",
@@ -40,7 +79,8 @@ namespace tcs.Naming.Test
                     AsciiOnly = true,
                     KeepPunctuations = false,
                     KeepSymbols = false,
-                    IgnoreIfInvalidCharacters = true
+                    IgnoreIfInvalidCharacters = true,
+                    SeparateIfUpperCase = true
                 });
 
                 Console.WriteLine("'{0}'", str);
@@ -122,21 +162,6 @@ namespace tcs.Naming.Test
         {
             TestCase<PathCase>();
             Assert.Pass();
-        }
-
-        private void DumpChar(char c)
-        {
-            Console.Write(c);
-            Console.Write(" [");
-            Console.Write("Ascii: {0}, ", char.IsAscii(c));
-            Console.Write("Letter/Digit: {0}, ", char.IsLetterOrDigit(c));
-            Console.Write("Separator: {0}, ", char.IsSeparator(c));
-            Console.Write("Punctuation: {0}, ", char.IsPunctuation(c));
-            Console.Write("White Space: {0}, ", char.IsWhiteSpace(c));
-            Console.Write("Surrogate: {0}, ", char.IsSurrogate(c));
-            Console.Write("Control: {0}, ", char.IsControl(c));
-            Console.Write("Symbol: {0}", char.IsSymbol(c));
-            Console.WriteLine(" ]");
         }
     }
 }
