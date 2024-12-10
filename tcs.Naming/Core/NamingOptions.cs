@@ -4,17 +4,17 @@ namespace tcs.Naming;
 
 public class NamingOptions
 {
-    public CultureInfo? Culture { get; set; }
+    public CultureInfo? Culture { get; set; } = CultureInfo.InvariantCulture;
 
-    public bool AsciiOnly { get; set; }
+    public bool AsciiOnly { get; set; } = false;
 
-    public bool KeepSymbols { get; set; }
+    public bool KeepSymbols { get; set; } = false;
 
-    public bool KeepPunctuations { get; set; }
+    public bool KeepPunctuations { get; set; } = false;
 
-    public bool IgnoreIfInvalidCharacters { get; set; }
+    public bool IgnoreIfInvalidCharacters { get; set; } = true;
 
-    public bool SeparateIfUpperCase { get; set; } 
+    public bool SeparateIfUpperCase { get; set; } = true;
 
-    public bool KeepUpperCaseWord { get; set; }
+    public bool KeepUpperCaseWord { get; set; } = true;
 }
