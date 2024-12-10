@@ -40,7 +40,7 @@ Train:		Tobias-Says-Hello-World
 - Databases
 - ...
 
-### Examples
+### Example 1
 ```
 var example0 = "Hello World";
 var example1 = "GitHub Examples";
@@ -72,6 +72,40 @@ foreach (var example in examples)
 // sterreich_ist_ein_schnes_land
 // what_is_your_name
 // everything_ok
+```
+
+### Example 2
+```
+var values = new List<string>();
+
+foreach (var name in Enum.GetNames<StringComparison>())
+{
+    values.Add(name);
+    Console.WriteLine(name.ConvertNamingCase<SnakeCase>());
+}
+
+// Outputs:
+
+// current_culture
+// current_culture_ignore_case
+// invariant_culture
+// invariant_culture_ignore_case
+// ordinal
+// ordinal_ignore_case
+
+foreach (var value in values)
+{
+    Console.WriteLine(value.ConvertNamingCase<PascalCase>());
+}
+
+// Outputs:
+
+// CurrentCulture
+// CurrentCultureIgnoreCase
+// InvariantCulture
+// InvariantCultureIgnoreCase
+// Ordinal
+// OrdinalIgnoreCase
 ```
 
 ### License
