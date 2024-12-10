@@ -80,8 +80,9 @@ var values = new List<string>();
 
 foreach (var name in Enum.GetNames<StringComparison>())
 {
-    values.Add(name);
-    Console.WriteLine(name.ConvertNamingCase<SnakeCase>());
+    var value = name.ConvertNamingCase<SnakeCase>();
+    values.Add(value);
+    Console.WriteLine(value);
 }
 
 // Outputs:
