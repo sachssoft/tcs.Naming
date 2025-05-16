@@ -1,49 +1,56 @@
-# Naming Case Convention 
+
+# Naming Case Convention
 
 ### Features
-- 11 known case kinds (see list below) 
-- Custom case support `CustomNamingCase`
-- Convention options `NamingOptions`
-- Extension support `NamingExtensions`
-- Designation using non-Latin characters, symbols, etc... also possible (if Ascii is false)
+- Supports 11 common case styles (see list below)  
+- Allows custom case styles via `CustomNamingCase`  
+- Highly configurable using `NamingOptions`  
+- Extensible through `NamingExtensions`  
+- Supports non-Latin characters, symbols, and more when `AsciiOnly` is set to `false`  
 
-### Support Naming Cases
+### Supported Case Styles
 
 ```
 Tobias says Hello World
 
-Camel:		tobiasSaysHelloWorld
-Constant:	TOBIAS_SAYS_HELLO_WORLD
-Dot:		tobias.says.hello.world
-Flat:		tobiassayshelloworld
-Kebab:		tobias-says-hello-world
-Pascal:		TobiasSaysHelloWorld
-Path:		Tobias/Says/Hello/World
-Sentence:	Tobias says hello world
-Snake:		tobias_says_hello_world
-Title:		Tobias Says Hello World
-Train:		Tobias-Says-Hello-World
+Camel:      tobiasSaysHelloWorld
+Constant:   TOBIAS_SAYS_HELLO_WORLD
+Dot:        tobias.says.hello.world
+Flat:       tobiassayshelloworld
+Kebab:      tobias-says-hello-world
+Pascal:     TobiasSaysHelloWorld
+Path:       Tobias/Says/Hello/World
+Sentence:   Tobias says hello world
+Snake:      tobias_says_hello_world
+Title:      Tobias Says Hello World
+Train:      Tobias-Says-Hello-World
 ```
 
-### Uses
+### Use Cases
 
-- Properties
-    - Example C# to JSON: "YourPropertyName" -> "your-property-name"
-- Autogenerate scripts
-- Dictionaries
-  - Resources
-  - Styles
-  - Languages
-  - ...
-- Tags
-- Databases
-- ...
+- Properties  
+  - Example: C# property `"YourPropertyName"` → JSON `"your-property-name"`  
+- Auto-generated scripts  
+- Dictionaries and lookup tables  
+  - Resources  
+  - Styles  
+  - Language files  
+  - Configuration files  
+  - Translations  
+- Tags and labels in applications  
+- Databases and table fields  
+- APIs and data serialization  
+- File names and paths  
+- User interface elements (e.g., class or CSS names)  
+- Logging and debugging outputs  
+- Code generators  
 
 ### Example 1
-```
+
+```csharp
 var example0 = "Hello World";
 var example1 = "GitHub Examples";
-var example2 = "Österreich ist ein schönes Land";
+var example2 = "Austria is a beautiful country";
 var example3 = "WhatIsYourName?";
 var example4 = "EverythingOK?";
 
@@ -63,18 +70,21 @@ foreach (var example in examples)
 
     Console.WriteLine(str);
 }
+```
 
-// Output:
+**Output:**
 
-// hello_world
-// git_hub_examples
-// sterreich_ist_ein_schnes_land
-// what_is_your_name
-// everything_ok
+```
+hello_world
+git_hub_examples
+austria_is_a_beautiful_country
+what_is_your_name
+everything_ok
 ```
 
 ### Example 2
-```
+
+```csharp
 var values = new List<string>();
 
 foreach (var name in Enum.GetNames<StringComparison>())
@@ -84,7 +94,7 @@ foreach (var name in Enum.GetNames<StringComparison>())
     Console.WriteLine(value);
 }
 
-// Outputs:
+// Output:
 
 // current_culture
 // current_culture_ignore_case
@@ -98,7 +108,7 @@ foreach (var value in values)
     Console.WriteLine(value.ConvertNamingCase<PascalCase>());
 }
 
-// Outputs:
+// Output:
 
 // CurrentCulture
 // CurrentCultureIgnoreCase
@@ -109,4 +119,5 @@ foreach (var value in values)
 ```
 
 ### License
+
 See MIT License
